@@ -16,7 +16,6 @@ public class Positive_Negative {
 		}else {
 			System.out.println("Pozitif sayı");
 		}
-		while(true || true) {}
 		
 	}
 
