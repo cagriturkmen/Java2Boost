@@ -6,9 +6,12 @@ public class PrintPattern {
 
 	public static void main(String[] args) {
 		int i,row;
+		boolean answer = true;
 		String str = "";
-		Scanner scanner = new Scanner(System.in);
+		
 		do {
+		Scanner scanner = new Scanner(System.in);
+		
 		System.out.println("Bir sayı giriniz: ");
 		if(scanner.hasNextInt()) {
 			row = scanner.nextInt();
@@ -19,12 +22,15 @@ public class PrintPattern {
 			System.out.println();
 		}
 		}else {
-			System.out.println("Hatalı giriş!");
-			System.out.println("Devam etmek istiyor musunuz?(E)");
-			scanner.nextLine();
-			str= scanner.nextLine();
-		}
-		}while(str.equalsIgnoreCase("E/H"));
+			System.out.println("Hatalı giriş! Devam etmek istiyor musunuz?(E)");
+			Scanner scanner2 = new Scanner(System.in);
+			str = scanner2.nextLine();
+			if(!str.equalsIgnoreCase("E")) {
+				System.out.println("Byee!!");
+				answer=false;
+			}
+		  }
+		}while(answer);
 	}
 //Hayır derse kullanıcı bay bay desin program
 }
