@@ -2,8 +2,8 @@ package com.bilgeadam.boost.lesson013;
 
 public class GettersSetters {
 	
-	String name="Cagri";
-	String lastname;
+	private String name;
+	private String lastname;
 
 	public String getName() {
 		return name;
