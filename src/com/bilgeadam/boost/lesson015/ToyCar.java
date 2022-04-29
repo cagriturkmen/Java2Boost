@@ -1,11 +1,58 @@
 package com.bilgeadam.boost.lesson015;
 
+import java.util.Scanner;
+
 public class ToyCar {
 		
-	private int batteryCapacity=5;
+	private int batteryCapacity;
 	int distanceTravelledForward;
 	int distanceTravelledRight;
 	
+	
+	
+	public ToyCar() {
+		super();
+		this.batteryCapacity = 5;
+		this.distanceTravelledForward = 0;
+		this.distanceTravelledRight = 0;
+	}
+	public ToyCar(int batteryCapacity, int distanceTravelledForward, int distanceTravelledRight) {
+		super();
+		this.batteryCapacity = batteryCapacity;
+		this.distanceTravelledForward = distanceTravelledForward;
+		this.distanceTravelledRight = distanceTravelledRight;
+	}
+	
+	void initToyCar() {
+		ToyCar toyCar = new ToyCar();
+
+		while(true) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("w-Move Forward\na-Move Left\ns-Move Backward\nd-Move Right\nc-Charge\nWhat is your move?");
+		String move = scanner.nextLine();
+		
+		switch (move.toLowerCase()) {
+		case "w":
+			toyCar.moveOneMeterForward();
+			break;
+		case "a","A":
+			toyCar.moveOneMeterLeft();
+			break;
+		case "s":
+			toyCar.moveOneMeterBackward();
+			break;
+		case "d":
+			toyCar.moveOneMeterRight();
+			break;
+		case "c":
+			toyCar.charge();
+			break;
+		default:
+			System.out.println("Invalid entry!!");
+			break;
+		}
+	}
+	}
 	private void remainingBattery() {
 		System.out.println("Remaining Battery: "+batteryCapacity);
 		if(batteryCapacity<=0) {
@@ -63,6 +110,24 @@ public class ToyCar {
 		System.out.println("\nCurrent Position: "+distanceTravelledForward+","+distanceTravelledRight);
 		remainingBattery();
 		}
+	}
+	public int getBatteryCapacity() {
+		return batteryCapacity;
+	}
+	public void setBatteryCapacity(int batteryCapacity) {
+		this.batteryCapacity = batteryCapacity;
+	}
+	public int getDistanceTravelledForward() {
+		return distanceTravelledForward;
+	}
+	public void setDistanceTravelledForward(int distanceTravelledForward) {
+		this.distanceTravelledForward = distanceTravelledForward;
+	}
+	public int getDistanceTravelledRight() {
+		return distanceTravelledRight;
+	}
+	public void setDistanceTravelledRight(int distanceTravelledRight) {
+		this.distanceTravelledRight = distanceTravelledRight;
 	}
 	
 	
