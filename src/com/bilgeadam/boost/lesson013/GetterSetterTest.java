@@ -6,7 +6,7 @@ public class GetterSetterTest {
 		
 		GettersSetters testObject = new GettersSetters();
 		GettersSetters testObject2 = new GettersSetters();
-
+		
 		
 		testObject.setName("Cagri");
 		testObject2.setName("Hande");
