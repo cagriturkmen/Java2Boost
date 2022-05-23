@@ -2,12 +2,14 @@ package com.bilgeadam.boost.lesson023;
 
 import java.util.Comparator;
 
-public class OrderNamesComparator implements Comparator<Student>{
+public class OrderNamesComparator implements Comparator<String>{
 
 	@Override
-	public int compare(Student o1, Student o2) {
+	public int compare(String o1, String o2) {
 		// TODO Auto-generated method stub
-		return o1.getName().compareToIgnoreCase(o2.getName());
+		return o1.compareToIgnoreCase(o2);
 	}
+
+	
 
 }
