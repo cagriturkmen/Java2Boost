@@ -2,6 +2,8 @@ package com.bilgeadam.boost.maraton.entity;
 
 import java.time.LocalDate;
 
+import com.bilgeadam.boost.maraton.exception.MarriageStatusException;
+
 public class Student extends Person {
 
 	/**
@@ -15,9 +17,12 @@ public class Student extends Person {
 	
 	
 	public Student(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday, LocalDate startingDate,
-			LocalDate leavingDate, PhoneNumber phoneNumber, MarriageStatus marriageStatus ) {
+			LocalDate leavingDate, PhoneNumber phoneNumber, MarriageStatus marriageStatus ) throws MarriageStatusException {
 		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, marriageStatus);
 		this.id = setRegId();
+		if(this.marriageStatus.equals(MarriageStatus.MARRIED)) {
+			throw new MarriageStatusException();
+		}
 	}
 
 
