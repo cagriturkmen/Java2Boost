@@ -3,6 +3,9 @@ package com.bilgeadam.boost.maraton.entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import com.bilgeadam.boost.maraton.exception.JanitorException;
+import com.bilgeadam.boost.maraton.exception.TeacherException;
+
 public class Janitor extends Employee{
 
 	/**
@@ -14,9 +17,11 @@ public class Janitor extends Employee{
 
 	public Janitor(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
 			LocalDate startingDate, LocalDate leavingDate, PhoneNumber phoneNumber, double startingSalary,
-			double salary, MarriageStatus marriageStatus) {
+			double salary, MarriageStatus marriageStatus) throws JanitorException {
 		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, startingSalary, salary, marriageStatus);
-		// TODO Auto-generated constructor stub
+		if(!this.getOccupation().equals(Occupation.JANITOR)) {
+			throw new JanitorException();
+		}
 	}
 
 	@Override

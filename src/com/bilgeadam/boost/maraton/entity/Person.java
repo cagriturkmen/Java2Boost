@@ -9,7 +9,7 @@ public abstract class Person implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 4247500913437253645L;
-	private Name name;
+	protected Name name;
 	private Gender gender;
 	private int age;
 	private Occupation occupation;
@@ -33,6 +33,18 @@ public abstract class Person implements Serializable{
 		this.phoneNumber = phoneNumber;
 		this.marriageStatus = marriageStatus;
 	}
+
+
+	public Person(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
+			LocalDate startingDate, PhoneNumber phoneNumber, MarriageStatus marriageStatus) {
+		this.name = name;
+		this.gender = gender;
+		this.age = age;
+		this.occupation = occupation;
+		this.birthday = birthday;
+		this.startingDate = startingDate;
+		this.phoneNumber = phoneNumber;
+		this.marriageStatus = marriageStatus;	}
 
 
 	public Name getName() {

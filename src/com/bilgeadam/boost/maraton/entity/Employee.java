@@ -22,6 +22,15 @@ public abstract class Employee extends Person{
 		this.salary = salary;
 	}
 	
+	public Employee(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
+			LocalDate startingDate, PhoneNumber phoneNumber, int startingSalary2, int salary2,
+			MarriageStatus marriageStatus) {
+		super(name, gender, age, occupation, birthday, startingDate, phoneNumber, marriageStatus);
+		this.id = setId();
+		this.startingSalary = startingSalary;
+		this.salary = salary;	
+		}
+
 	public abstract double calculateLatestSalary();
 	
 	public abstract String setId();
