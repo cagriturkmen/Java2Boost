@@ -3,7 +3,6 @@ package com.bilgeadam.boost.maraton.entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-import com.bilgeadam.boost.maraton.exception.StudentException;
 import com.bilgeadam.boost.maraton.exception.TeacherException;
 
 public class Teacher extends Employee {
@@ -18,15 +17,15 @@ public class Teacher extends Employee {
 	
 	public Teacher(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
 			LocalDate startingDate, LocalDate leavingDate, PhoneNumber phoneNumber, double startingSalary,
-			double salary, MarriageStatus marriageStatus) throws TeacherException {
-		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, startingSalary, salary, marriageStatus);
+			MarriageStatus marriageStatus) throws TeacherException {
+		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, startingSalary, marriageStatus);
 		if(!this.getOccupation().equals(Occupation.TEACHER)) {
 			throw new TeacherException();
 		}	}
 
 	public Teacher(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
-			LocalDate startingDate, PhoneNumber phoneNumber, int startingSalary, int salary, MarriageStatus marriageStatus) throws  TeacherException {
-		super(name, gender, age, occupation, birthday, startingDate, phoneNumber, startingSalary, salary, marriageStatus);
+			LocalDate startingDate, PhoneNumber phoneNumber, int startingSalary, MarriageStatus marriageStatus) throws  TeacherException {
+		super(name, gender, age, occupation, birthday, startingDate, phoneNumber, startingSalary, marriageStatus);
 		if(!this.getOccupation().equals(Occupation.TEACHER)) {
 			throw new TeacherException();
 		}
@@ -43,7 +42,7 @@ public class Teacher extends Employee {
 		}else {
 			wageIncreaseNumber = (int) (this.getStartingDate().until(leavingDate,ChronoUnit.MONTHS)/6);
 		}
-		
+		salary = startingSalary;
 		for (int i = 0; i < wageIncreaseNumber; i++) {
 			salary += salary * 0.1;
 		}

@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 import com.bilgeadam.boost.maraton.exception.OfficerException;
-import com.bilgeadam.boost.maraton.exception.TeacherException;
 
 public class Officer extends Employee {
 
@@ -18,8 +17,8 @@ public class Officer extends Employee {
 	
 	public Officer(Name name, Gender gender, int age, Occupation occupation, LocalDate birthday,
 			LocalDate startingDate, LocalDate leavingDate, PhoneNumber phoneNumber, double startingSalary,
-			double salary, MarriageStatus marriageStatus) throws OfficerException {
-		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, startingSalary, salary, marriageStatus);
+			 MarriageStatus marriageStatus) throws OfficerException {
+		super(name, gender, age, occupation, birthday, startingDate, leavingDate, phoneNumber, startingSalary, marriageStatus);
 		if(!this.getOccupation().equals(Occupation.OFFICER)) {
 			throw new OfficerException();
 		}
@@ -27,7 +26,7 @@ public class Officer extends Employee {
 
 	@Override
 	public double calculateLatestSalary() {
-int wageIncreaseNumber = 0;
+		int wageIncreaseNumber = 0;
 		
 		if(leavingDate == null) {
 			wageIncreaseNumber = (int) (this.getStartingDate().until(LocalDate.now(),ChronoUnit.MONTHS)/6);

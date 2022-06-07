@@ -29,23 +29,23 @@ public class EmployeeManager {
 		
 		Employee t1 = new Teacher(new Name("Babur","Somer"), Gender.MAN, 50,
 				Occupation.TEACHER, LocalDate.of(1972, 3, 14), LocalDate.of(2020, 1, 1),
-				new PhoneNumber(123412312, 123412312), 50000, 60000, MarriageStatus.MARRIED);
+				new PhoneNumber(123412312, 123412312), 50000,  MarriageStatus.MARRIED);
 		
 		Employee t2 = new Teacher(new Name("Cagri","Turkmen"), Gender.MAN, 30,
 				Occupation.TEACHER, LocalDate.of(1992, 3, 14), LocalDate.of(2020, 1, 1), 
-				new PhoneNumber(123412312, 123412312), 1000, 2000, MarriageStatus.SINGLE);
+				new PhoneNumber(123412312, 123412312), 1000,  MarriageStatus.SINGLE);
 		
 		Employee t3 = new Teacher(new Name("Mustafa","Ozturk"), Gender.MAN, 32,
 				Occupation.TEACHER, LocalDate.of(1990, 3, 14), LocalDate.of(2020, 1, 1),
-				new PhoneNumber(123412312, 123412312), 50000, 60000, MarriageStatus.MARRIED);
+				new PhoneNumber(123412312, 123412312), 50000,  MarriageStatus.MARRIED);
 		
 		Employee o1 = new Officer(new Name("Bahadır","Ozturk"), Gender.MAN, 32,
 				Occupation.OFFICER, LocalDate.of(1990, 3, 14),LocalDate.of(2000, 1, 1), LocalDate.of(2020, 3, 1), 
-				new PhoneNumber(123412312, 123412312), 50000, 60000, MarriageStatus.MARRIED);
+				new PhoneNumber(123412312, 123412312), 50000,  MarriageStatus.MARRIED);
 		
 		Employee j1 = new Janitor(new Name("Heidi","Klum"), Gender.WOMAN, 32,
 				Occupation.JANITOR, LocalDate.of(1990, 3, 14),LocalDate.of(2010, 1, 1), LocalDate.of(2021, 8, 5), 
-				new PhoneNumber(123412312, 123412312), 50000, 60000, MarriageStatus.MARRIED);
+				new PhoneNumber(123412312, 123412312), 50000, MarriageStatus.MARRIED);
 		
 		employeeList.add(j1);
 		employeeList.add(o1);
