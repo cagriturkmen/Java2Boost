@@ -13,7 +13,7 @@ public class Student extends Person {
 	 * 
 	 */
 	private static final long serialVersionUID = -8645443614815950684L;
-	
+	private static List<Student> arrayList;
 	private String id;
 	private List<Course> lessons;
 
@@ -32,6 +32,7 @@ public class Student extends Person {
 		if(!this.getOccupation().equals(Occupation.STUDENT)) {
 			throw new StudentException();
 		}
+		arrayList.add(this);
 	}
 
 
